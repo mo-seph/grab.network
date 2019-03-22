@@ -103,6 +103,7 @@ Subscription grabbing means saying "here's a bunch of buffers, put stuff in them
 They look a bit like this:
 ![](SubscriptionGrabbing.png)
 
+The `starting`, `recorded` and `update` messages are similar. The only new message is one to subscribe with a buffer. A `subscribe` message looks like this:
 ```
 {
 	"from" : "buffer_src_1012",
@@ -111,3 +112,4 @@ They look a bit like this:
 	"dest_buffer" : "subscribe_buffer.8"
 }
 ```
+There is a complementary one for `unsubscribe` to stop your buffers being available.
