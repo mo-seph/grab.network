@@ -1,6 +1,6 @@
 # grab.network
 
-![](images/SimpleGrabbing.png)
+![](images/SubscriptionGrabbing.png)
 
 This is a library to build up a network of things that can grab audio into buffers in interesting ways. The network has:
 * Sources: these are things that can capture a bunch of audio data in some way, and pass it on to some things that are interested in it.
