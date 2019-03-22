@@ -1,18 +1,14 @@
 # grab.network
 
+![](images/SimpleGrabbing.png)
+
 This is a library to build up a network of things that can grab audio into buffers in interesting ways. The network has:
 * Sources: these are things that can capture a bunch of audio data in some way, and pass it on to some things that are interested in it.
 * Targets: these are things that would like to be given a bunch of audio at some point.
 
 The original motivation for this was building a granular synth engine, and wanting to be able to capture audio from different channels. This meant having a device on a return channel, where I would send everything that I wanted to be captured - then the grain engine could ask for a new buffer to be grabbed. Current motivation is extending to things that can grab audio semi-autonomously, and devices can subscribe to get updates as and when they happen.
 
-
-# Example devices
-
-## Grab Source
-![](GrabSource.png)
-
-This is a simple single buffer grabber - you can ask it to capture into a buffer, and it will do that.
+There are a collection of max patches, and then some Example Devices that show how they can be used in larger systems.
 
 # Network
 The network is based around named send/receive objects. There are two channels (which may be one too many!) with the idea that
@@ -56,7 +52,7 @@ Registering as a thing that can grab looks like this:
 At the moment there are two ways of grabbing stuff. The simple way is to ask for a certain amount to be recorded into a certain buffer. The other way is to provide a set of buffers that something else can record into as and when it chooses - a subscription model.
 Taking the simple version first, the example devices are GrabSource and GrabTarget.
 
-![](SimpleGrabbing.png)
+![](images/SimpleGrabbing.png)
 
 Using GrabTarget, you can select a source in the dropdown menu. Then decide how much time you would like to grab with the numbox.
 
@@ -101,7 +97,7 @@ Subscription grabbing means saying "here's a bunch of buffers, put stuff in them
 * RandomGrabber, that maintains a list of subscribers, and grabs stuff for them at random times, for random lengths.
 
 They look a bit like this:
-![](SubscriptionGrabbing.png)
+![](images/SubscriptionGrabbing.png)
 
 The `starting`, `recorded` and `update` messages are similar. The only new message is one to subscribe with a buffer. A `subscribe` message looks like this:
 ```
