@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 772.0, 937.0 ],
+		"rect" : [ 34.0, 79.0, 1612.0, 937.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,54 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-43",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 286.0, 230.0, 32.0, 22.0 ],
+					"text" : "/~ 2."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-42",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1402.0, 220.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1402.0, 338.0, 35.0, 22.0 ],
+					"text" : "clear"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "dictionary", "dictionary" ],
+					"patching_rect" : [ 1402.0, 165.0, 123.0, 22.0 ],
+					"text" : "dict.route action:clear"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-24",
 					"maxclass" : "newobj",
@@ -255,7 +303,7 @@
 				"box" : 				{
 					"comment" : "Buffers out of subscribers",
 					"id" : "obj-4",
-					"index" : 0,
+					"index" : 4,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -430,7 +478,7 @@
 				"box" : 				{
 					"comment" : "Buffer names out (prepended by set)",
 					"id" : "obj-81",
-					"index" : 0,
+					"index" : 3,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -551,7 +599,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1195.0, 499.0, 242.0, 22.0 ],
-					"text" : "subscribe_buffer.3"
+					"text" : "---subscription_buffer.1"
 				}
 
 			}
@@ -726,14 +774,14 @@
 					"presentation_rect" : [ 19.0, 87.5, 21.0, 21.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_linknames" : 1,
-							"parameter_longname" : "AutoNorm",
-							"parameter_initial_enable" : 1,
 							"parameter_mmax" : 1.0,
 							"parameter_initial" : [ 1 ],
 							"parameter_shortname" : "AudoNorm",
 							"parameter_enum" : [ "off", "on" ],
-							"parameter_type" : 2
+							"parameter_type" : 2,
+							"parameter_linknames" : 1,
+							"parameter_longname" : "AutoNorm",
+							"parameter_initial_enable" : 1
 						}
 
 					}
@@ -806,11 +854,11 @@
 				"box" : 				{
 					"comment" : "Channel 1 in (signal)",
 					"id" : "obj-62",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 288.0, 100.0, 30.0, 30.0 ]
 				}
 
@@ -819,11 +867,11 @@
 				"box" : 				{
 					"comment" : "Channel 2 in (Signal)",
 					"id" : "obj-64",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 323.0, 100.0, 30.0, 30.0 ]
 				}
 
@@ -832,11 +880,11 @@
 				"box" : 				{
 					"comment" : "Actions in (dictionaries)",
 					"id" : "obj-69",
-					"index" : 0,
+					"index" : 3,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "dictionary" ],
 					"patching_rect" : [ 441.333343505859375, 100.0, 30.0, 30.0 ]
 				}
 
@@ -845,7 +893,7 @@
 				"box" : 				{
 					"comment" : "Actions out to network (dictionaries)",
 					"id" : "obj-71",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -857,7 +905,7 @@
 				"box" : 				{
 					"comment" : "Proportion of buffer grabbed",
 					"id" : "obj-72",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -953,6 +1001,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-42", 0 ],
+					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-22", 0 ]
 				}
@@ -962,6 +1017,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-40", 1 ],
 					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"midpoints" : [ 1411.5, 366.0, 1032.5, 366.0 ],
+					"source" : [ "obj-25", 0 ]
 				}
 
 			}
@@ -1084,7 +1147,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"order" : 1,
+					"order" : 2,
 					"source" : [ "obj-36", 0 ]
 				}
 
@@ -1092,6 +1155,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
+					"order" : 1,
+					"source" : [ "obj-36", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
 					"order" : 0,
 					"source" : [ "obj-36", 0 ]
 				}
@@ -1167,6 +1238,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-42", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-70", 0 ],
+					"source" : [ "obj-43", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-41", 0 ],
 					"source" : [ "obj-44", 0 ]
 				}
@@ -1195,7 +1280,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-70", 0 ],
+					"destination" : [ "obj-43", 0 ],
 					"source" : [ "obj-48", 0 ]
 				}
 
@@ -1424,24 +1509,7 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"obj-68" : [ "AutoNorm", "AudoNorm", 0 ],
-			"parameterbanks" : 			{
-
-			}
-
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "dmr.grab.direct.maxpat",
-				"bootpath" : "~/PersonalProjects/MusicDevices/grab.network",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
