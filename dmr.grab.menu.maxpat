@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 0,
-			"revision" : 3,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -38,6 +38,44 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 229.0, 522.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 290.0, 0.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 227.0, 570.0, 117.0, 22.0 ],
+					"text" : "dmr.grab.fill_window"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 481.0, 532.0, 117.0, 22.0 ],
+					"text" : "dmr.grab.fill_window"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "newobj",
@@ -113,7 +151,7 @@
 				"box" : 				{
 					"comment" : "ID of selected device",
 					"id" : "obj-2",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -125,11 +163,11 @@
 				"box" : 				{
 					"comment" : "Register dictionaries in",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "dictionary" ],
 					"patching_rect" : [ 171.0, 70.0, 30.0, 30.0 ]
 				}
 
@@ -292,7 +330,7 @@
 					"fontname" : "Ableton Sans Medium",
 					"fontsize" : 9.5,
 					"id" : "obj-24",
-					"items" : [ "A-RandomGrabber-1 : 2", ",", "1-Grabbing-3 : 0002-single-grab", ",", "2-GrabbingOooble : 0003-single-grab" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -302,7 +340,7 @@
 					"prefix" : "b",
 					"prefix_mode" : 1,
 					"presentation" : 1,
-					"presentation_rect" : [ -3.0, -3.0, 134.0, 20.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 117.0, 20.0 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -410,7 +448,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 260.666656494140625, 617.0, 77.999992370605469, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 128.0, 14.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 117.0, 22.0 ],
 					"proportion" : 0.5,
 					"rounded" : 0
 				}
@@ -458,6 +496,22 @@
 				"patchline" : 				{
 					"destination" : [ "obj-49", 0 ],
 					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"order" : 0,
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"order" : 1,
+					"source" : [ "obj-13", 0 ]
 				}
 
 			}
@@ -651,9 +705,14 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [  ],
-		"autosave" : 0
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+ ]
 	}
 
 }
